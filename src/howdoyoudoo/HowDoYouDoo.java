@@ -8,7 +8,7 @@ package howdoyoudoo;
 
 /**
  *
- * @author rachelg
+ * @author RDGalang
  */
 public class HowDoYouDoo {
 

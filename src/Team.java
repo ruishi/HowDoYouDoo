@@ -6,7 +6,7 @@
 
 /**
  *
- * @author rachelg
+ * @author RD Galang
  */
 public class Team 
 {

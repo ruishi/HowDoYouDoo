@@ -6,7 +6,7 @@
 
 /**
  *
- * @author rachelg
+ * @author RD Galang
  */
 public class HowDoYouDooUI extends javax.swing.JFrame {
 
@@ -26,62 +26,69 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        teamsLbl = new javax.swing.JLabel();
+        goBtn = new javax.swing.JButton();
+        teamAField = new javax.swing.JTextField();
+        teamBField = new javax.swing.JTextField();
+        roundComboBox = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        fileMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        editMenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        helpMenu = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Teams");
+        teamsLbl.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        teamsLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        teamsLbl.setText("Teams");
 
-        jButton1.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
-        jButton1.setText("GO!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        goBtn.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        goBtn.setText("GO!");
+        goBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                goBtnActionPerformed(evt);
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 153));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Team A");
+        teamAField.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        teamAField.setForeground(new java.awt.Color(0, 102, 153));
+        teamAField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        teamAField.setText("Team A");
+        teamAField.setName("teamName1"); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 102, 153));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Team B");
+        teamBField.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        teamBField.setForeground(new java.awt.Color(0, 102, 153));
+        teamBField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        teamBField.setText("Team B");
+        teamBField.setName("teamName2"); // NOI18N
 
-        jMenu1.setText("File");
+        roundComboBox.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        roundComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Round", "2 Rounds", "3 Rounds", "4 Rounds", "5 Rounds" }));
+        roundComboBox.setName("roundDropDown"); // NOI18N
+
+        fileMenu.setText("File");
 
         jMenuItem1.setText("Exit");
-        jMenu1.add(jMenuItem1);
+        fileMenu.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(fileMenu);
 
-        jMenu2.setText("Edit");
+        editMenu.setText("Edit");
 
         jMenuItem2.setText("Options");
-        jMenu2.add(jMenuItem2);
+        editMenu.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(editMenu);
 
-        jMenu3.setText("Help");
+        helpMenu.setText("Help");
 
         jMenuItem3.setText("About");
-        jMenu3.add(jMenuItem3);
+        helpMenu.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(helpMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -89,38 +96,42 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(teamsLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(279, 279, 279)
-                .addComponent(jButton1)
+                .addComponent(goBtn)
                 .addContainerGap(290, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(teamAField, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(teamBField)
+                    .addComponent(roundComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teamsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jButton1)
+                .addComponent(teamAField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(teamBField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(roundComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(goBtn)
                 .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void goBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBtnActionPerformed
+        Team teamA = new Team(teamAField.getText());
+        Team teamB = new Team(teamBField.getText());
+    }//GEN-LAST:event_goBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,16 +169,17 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu editMenu;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JButton goBtn;
+    private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JComboBox roundComboBox;
+    private javax.swing.JTextField teamAField;
+    private javax.swing.JTextField teamBField;
+    private javax.swing.JLabel teamsLbl;
     // End of variables declaration//GEN-END:variables
 }
