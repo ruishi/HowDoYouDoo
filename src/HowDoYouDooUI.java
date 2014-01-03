@@ -131,6 +131,12 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
     private void goBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBtnActionPerformed
         Team teamA = new Team(teamAField.getText());
         Team teamB = new Team(teamBField.getText());
+        String round = (String)roundComboBox.getSelectedItem();
+        int roundNum;
+        
+        roundNum = Character.getNumericValue(round.charAt(round.length() - 1));
+        GameHandler game = new GameHandler(teamA, teamB, roundNum);
+        game.startGame();
     }//GEN-LAST:event_goBtnActionPerformed
 
     /**
