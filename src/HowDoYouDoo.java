@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 
-package howdoyoudoo;
-
 /**
  *
  * @author RDGalang
  */
 public class HowDoYouDoo {
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        //StartUI startGUI = new StartUI();
+        //startGUI.setVisible(true);
     }
     
 }
