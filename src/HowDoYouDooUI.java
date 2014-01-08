@@ -6,15 +6,19 @@
 
 /**
  *
- * @author rachelg
+ * @author RD Galang
  */
-public class HowDoYouDooUI extends javax.swing.JFrame {
+
+import java.util.Timer;
+        
+public class HowDoYouDooUI extends javax.swing.JFrame 
+{
 
     GameHandler game;
-    /**
-     * Creates new form HowDoYouDoUI
-     */
-    public HowDoYouDooUI() {
+  
+    
+    public HowDoYouDooUI() 
+    {
         initComponents();
     }
 
@@ -25,7 +29,8 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         mainPanel = new javax.swing.JPanel();
         startPanel = new javax.swing.JPanel();
@@ -39,6 +44,13 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
         songLbl = new javax.swing.JLabel();
         correctLbl = new javax.swing.JButton();
         passLbl = new javax.swing.JButton();
+        resultsPanel = new javax.swing.JPanel();
+        statsLbl = new javax.swing.JLabel();
+        team1ResultsLbl = new javax.swing.JLabel();
+        team1ScoreLbl = new javax.swing.JLabel();
+        team2ResultsLbl = new javax.swing.JLabel();
+        team2ScoreLbl = new javax.swing.JLabel();
+        nxtRoundBtn = new javax.swing.JButton();
         mainMenu = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         closeItm = new javax.swing.JMenuItem();
@@ -55,11 +67,6 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
         teamAField.setForeground(new java.awt.Color(0, 102, 153));
         teamAField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         teamAField.setText("Team A");
-        teamAField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teamAFieldActionPerformed(evt);
-            }
-        });
 
         teamBField.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         teamBField.setForeground(new java.awt.Color(0, 102, 153));
@@ -73,8 +80,10 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
 
         goBtn.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         goBtn.setText("Go!");
-        goBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        goBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 goBtnActionPerformed(evt);
             }
         });
@@ -131,20 +140,25 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
 
         mainPanel.add(startPanel, "startCard");
 
-        songLbl.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        songLbl.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         songLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        songLbl.setText("<html>\nSong<br>\n(Artist)");
 
+        correctLbl.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         correctLbl.setText("CORRECT");
-        correctLbl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        correctLbl.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 correctLblActionPerformed(evt);
             }
         });
 
+        passLbl.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         passLbl.setText("PASS");
-        passLbl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        passLbl.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 passLblActionPerformed(evt);
             }
         });
@@ -178,6 +192,75 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
 
         mainPanel.add(gamePanel, "gameCard");
 
+        statsLbl.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
+        statsLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statsLbl.setText("GAME STATISTICS");
+
+        team1ResultsLbl.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        team1ResultsLbl.setText("Team A:");
+
+        team1ScoreLbl.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        team1ScoreLbl.setText("0");
+
+        team2ResultsLbl.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        team2ResultsLbl.setText("Team B:");
+
+        team2ScoreLbl.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        team2ScoreLbl.setText("0");
+
+        nxtRoundBtn.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        nxtRoundBtn.setText("Next Round");
+        nxtRoundBtn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nxtRoundBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout resultsPanelLayout = new javax.swing.GroupLayout(resultsPanel);
+        resultsPanel.setLayout(resultsPanelLayout);
+        resultsPanelLayout.setHorizontalGroup(
+            resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(resultsPanelLayout.createSequentialGroup()
+                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(resultsPanelLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(statsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(resultsPanelLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(team2ResultsLbl)
+                            .addComponent(team1ResultsLbl))
+                        .addGap(41, 41, 41)
+                        .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(team1ScoreLbl)
+                            .addComponent(team2ScoreLbl)))
+                    .addGroup(resultsPanelLayout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(nxtRoundBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        resultsPanelLayout.setVerticalGroup(
+            resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(resultsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(statsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(team1ResultsLbl)
+                    .addComponent(team1ScoreLbl))
+                .addGap(79, 79, 79)
+                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(team2ResultsLbl)
+                    .addComponent(team2ScoreLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(nxtRoundBtn)
+                .addGap(31, 31, 31))
+        );
+
+        mainPanel.add(resultsPanel, "resultsCard");
+
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         fileMenu.setText("File");
@@ -206,19 +289,22 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void teamAFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamAFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_teamAFieldActionPerformed
-
     private void goBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBtnActionPerformed
         Team teamA = new Team(teamAField.getText());
         Team teamB = new Team(teamBField.getText());
         int rounds = (int) roundSpinner.getValue();
         String curSong;
+        
+        team1ResultsLbl.setText(teamA.getName() + ":");
+        team2ResultsLbl.setText(teamB.getName() + ":");
+        
         game = new GameHandler(teamA, teamB, rounds);
         songLbl.setText(game.nextSong());
+        
         java.awt.CardLayout cardLayout = (java.awt.CardLayout) mainPanel.getLayout();
         cardLayout.next(mainPanel);
+        
+        playRound();
     }//GEN-LAST:event_goBtnActionPerformed
 
     private void correctLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correctLblActionPerformed
@@ -229,6 +315,34 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
         songLbl.setText(game.nextSong(false));
     }//GEN-LAST:event_passLblActionPerformed
 
+    private void nxtRoundBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nxtRoundBtnActionPerformed
+    {//GEN-HEADEREND:event_nxtRoundBtnActionPerformed
+        playRound();
+    }//GEN-LAST:event_nxtRoundBtnActionPerformed
+
+    public void playRound()
+    {
+        java.awt.CardLayout cardLayout = (java.awt.CardLayout) mainPanel.getLayout();
+        cardLayout.show(mainPanel, "gameCard");
+        Timer timer = new Timer();
+        timer.schedule(new RoundTimer(this, game), 10000);
+
+    }
+    
+    public void roundResults()
+    {
+        if (game.roundsLeft())
+            game.nextTeam();
+        else
+            nxtRoundBtn.setVisible(false);
+        
+        team1ScoreLbl.setText(Integer.toString(game.getScores()[0]));
+        team2ScoreLbl.setText(Integer.toString(game.getScores()[1]));
+        
+        java.awt.CardLayout cardLayout = (java.awt.CardLayout) mainPanel.getLayout();
+        cardLayout.show(mainPanel, "resultsCard");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -275,13 +389,20 @@ public class HowDoYouDooUI extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton nxtRoundBtn;
     private javax.swing.JMenuItem optnsItm;
     private javax.swing.JButton passLbl;
+    private javax.swing.JPanel resultsPanel;
     private javax.swing.JSpinner roundSpinner;
     private javax.swing.JLabel roundsLbl;
     private javax.swing.JLabel songLbl;
     private javax.swing.JLabel startHeaderLbl;
     private javax.swing.JPanel startPanel;
+    private javax.swing.JLabel statsLbl;
+    private javax.swing.JLabel team1ResultsLbl;
+    private javax.swing.JLabel team1ScoreLbl;
+    private javax.swing.JLabel team2ResultsLbl;
+    private javax.swing.JLabel team2ScoreLbl;
     private javax.swing.JTextField teamAField;
     private javax.swing.JTextField teamBField;
     // End of variables declaration//GEN-END:variables
