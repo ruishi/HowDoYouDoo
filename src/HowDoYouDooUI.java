@@ -325,7 +325,7 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         java.awt.CardLayout cardLayout = (java.awt.CardLayout) mainPanel.getLayout();
         cardLayout.show(mainPanel, "gameCard");
         Timer timer = new Timer();
-        timer.schedule(new RoundTimer(this, game), 10000);
+        timer.schedule(new RoundTimer(this, game), 120000);
 
     }
     
@@ -334,7 +334,10 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         if (game.roundsLeft())
             game.nextTeam();
         else
+        {
             nxtRoundBtn.setVisible(false);
+            statsLbl.setText("Game Over");
+        }
         
         team1ScoreLbl.setText(Integer.toString(game.getScores()[0]));
         team2ScoreLbl.setText(Integer.toString(game.getScores()[1]));
