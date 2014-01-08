@@ -17,25 +17,45 @@ public class GameHandler {
     private Team team2;
     private int rounds;
     private ArrayList<String> songs;
+    private Team currentTeam;
     
     public GameHandler(Team team1, Team team2, int rounds)
     {
         this.team1 = team1;
         this.team2 = team2;
         this.rounds = rounds;
+        currentTeam = team1;
+        songs = new ArrayList<>();
+        songs.add("Girl on Fire");
+        songs.add("Get Lucky");
+        songs.add("Walking on Sunshine");
+        songs.add("Roar") ;
+        songs.add("Canadian Bacon");
     }
     
-    public String nextSong(Team team, Boolean correct)
+    public String nextSong()
     {
-        if (correct)
-            team.increaseScore();
         Random rand = new Random();
         return songs.remove(rand.nextInt(songs.size()));
     }
     
+    public String nextSong(Boolean correct)
+    {
+        if (correct)
+            currentTeam.increaseScore();
+        Random rand = new Random();
+        return songs.remove(rand.nextInt(songs.size()));
+    }
+    
+    public Team getCurrentTeam()
+    {
+        return currentTeam;
+    }
+    
     public void startGame()
     {
-        //CardUI gameWin = new CardUI();
-        //gameWin.setVisible(true);
+        
     }
-}
+    
+ }
+

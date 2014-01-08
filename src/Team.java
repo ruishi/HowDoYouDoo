@@ -12,11 +12,13 @@ public class Team
 {
     private String name;
     private int score;
+    private int currentRound;
     
     public Team(String name)
     {
         this.name = name;
         score = 0;
+        currentRound = 1;
     }
     
     public void increaseScore()
@@ -37,5 +39,10 @@ public class Team
     public String getName()
     {
         return name;
+    }
+    
+    public int getCurrentROund()
+    {
+        return currentRound;
     }
 }
