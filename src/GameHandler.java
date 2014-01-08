@@ -18,6 +18,8 @@ public class GameHandler {
     private int rounds;
     private ArrayList<String> songs;
     private Team currentTeam;
+    private int roundCounter;
+    private int[] scores = new int[2];
     
     public GameHandler(Team team1, Team team2, int rounds)
     {
@@ -25,6 +27,7 @@ public class GameHandler {
         this.team2 = team2;
         this.rounds = rounds;
         currentTeam = team1;
+        roundCounter = 0;
         songs = new ArrayList<>();
         songs.add("Girl on Fire");
         songs.add("Get Lucky");
@@ -36,7 +39,10 @@ public class GameHandler {
     public String nextSong()
     {
         Random rand = new Random();
-        return songs.remove(rand.nextInt(songs.size()));
+        if (songs.isEmpty())
+            return "No more songs";
+        else
+            return songs.remove(rand.nextInt(songs.size()));
     }
     
     public String nextSong(Boolean correct)
@@ -44,7 +50,10 @@ public class GameHandler {
         if (correct)
             currentTeam.increaseScore();
         Random rand = new Random();
-        return songs.remove(rand.nextInt(songs.size()));
+        if (songs.isEmpty())
+                return "No more songs";
+        else
+            return songs.remove(rand.nextInt(songs.size()));
     }
     
     public Team getCurrentTeam()
@@ -52,9 +61,33 @@ public class GameHandler {
         return currentTeam;
     }
     
-    public void startGame()
+    public void nextTeam()
     {
-        
+        if (currentTeam == team1)
+            currentTeam = team2;
+        else
+            currentTeam = team1;
+                
+    }
+    
+    public void increaseRound()
+    {
+        roundCounter++;
+    }
+    
+    public int[] getScores()
+    {
+        scores[0] = team1.getScore();
+        scores[1] = team2.getScore();
+        return scores;
+    }
+    
+    public Boolean roundsLeft()
+    {
+        if (roundCounter < rounds * 2)
+            return true;
+        else
+            return false;
     }
     
  }
