@@ -233,7 +233,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="songLbl" min="-2" pref="228" max="-2" attributes="0"/>
+                      <Component id="songLbl" pref="228" max="32767" attributes="0"/>
                       <EmptySpace pref="66" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="passLbl" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
