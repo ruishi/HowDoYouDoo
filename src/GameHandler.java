@@ -11,6 +11,14 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.IOException;
+import java.util.HashSet;
+
+import org.xml.sax.*;
+import org.xml.sax.helpers.XMLReaderFactory;
+
+import java.net.URL;
+import java.net.MalformedURLException;
 
 public class GameHandler {
     private Team team1;
@@ -28,12 +36,27 @@ public class GameHandler {
         this.rounds = rounds;
         currentTeam = team1;
         roundCounter = 0;
-        songs = new ArrayList<>();
-        songs.add("Girl on Fire");
-        songs.add("Get Lucky");
-        songs.add("Walking on Sunshine");
-        songs.add("Roar") ;
-        songs.add("Canadian Bacon");
+        songs = populateSongList();
+ 
+    }
+    
+    private ArrayList<String> populateSongList()
+    {
+        String url = "http://www1.billboard.com/rss/charts/hot-100";
+        SongHandler handler = new SongHandler();
+        try
+        {
+            XMLReader reader = XMLReaderFactory.createXMLReader();
+            reader.setContentHandler(handler);
+            reader.parse(new InputSource(new URL(url).openStream()));
+        } catch(SAXException | IOException e) {}
+        
+        ArrayList<String> songList = handler.getSongList();
+        HashSet uniqueSongList = new HashSet();
+        uniqueSongList.addAll(songList);
+        songList.clear();
+        songList.addAll(uniqueSongList);
+        return songList;
     }
     
     public String nextSong()
