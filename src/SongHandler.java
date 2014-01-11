@@ -39,7 +39,8 @@ public class SongHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localname, String qName) throws SAXException
     {
-        songs.add(song);
+        if (qName.equalsIgnoreCase("title"))
+            songs.add(song);
     }
     
     @Override

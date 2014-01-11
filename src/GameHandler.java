@@ -18,7 +18,6 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.net.URL;
-import java.net.MalformedURLException;
 
 public class GameHandler {
     private Team team1;
@@ -51,12 +50,7 @@ public class GameHandler {
             reader.parse(new InputSource(new URL(url).openStream()));
         } catch(SAXException | IOException e) {}
         
-        ArrayList<String> songList = handler.getSongList();
-        HashSet uniqueSongList = new HashSet();
-        uniqueSongList.addAll(songList);
-        songList.clear();
-        songList.addAll(uniqueSongList);
-        return songList;
+        return handler.getSongList();
     }
     
     public String nextSong()
