@@ -9,6 +9,7 @@
  * @author RD Galang
  */
 
+import java.awt.Frame;
 import java.util.Timer;
         
 public class HowDoYouDooUI extends javax.swing.JFrame 
@@ -60,7 +61,11 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         aboutItm = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("How Do You Doo?");
+        setPreferredSize(new java.awt.Dimension(1024, 768));
 
+        mainPanel.setMaximumSize(new java.awt.Dimension(1024, 768));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         mainPanel.setLayout(new java.awt.CardLayout());
 
         teamAField.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
@@ -97,45 +102,40 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         startPanelLayout.setHorizontalGroup(
             startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(startPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startPanelLayout.createSequentialGroup()
-                        .addComponent(startHeaderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(36, 36, 36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startPanelLayout.createSequentialGroup()
-                        .addGap(0, 98, Short.MAX_VALUE)
-                        .addGroup(startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teamBField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(startHeaderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(startPanelLayout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addGroup(startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(startPanelLayout.createSequentialGroup()
+                                .addComponent(roundsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(roundSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startPanelLayout.createSequentialGroup()
-                                    .addComponent(roundsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(roundSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(64, 64, 64))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startPanelLayout.createSequentialGroup()
-                                    .addComponent(teamAField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(92, 92, 92)))))))
-            .addGroup(startPanelLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(goBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(teamBField, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(teamAField, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(goBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 256, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         startPanelLayout.setVerticalGroup(
             startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(startPanelLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addContainerGap(193, Short.MAX_VALUE)
                 .addComponent(startHeaderLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(teamAField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(64, 64, 64)
                 .addComponent(teamBField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(55, 55, 55)
                 .addGroup(startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roundsLbl)
                     .addComponent(roundSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(goBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addGap(29, 29, 29))
+                .addGap(65, 65, 65)
+                .addComponent(goBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
 
         mainPanel.add(startPanel, "startCard");
@@ -167,27 +167,27 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(songLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135))
             .addGroup(gamePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(correctLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(passLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(gamePanelLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(songLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addComponent(correctLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(passLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gamePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(songLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addContainerGap(213, Short.MAX_VALUE)
+                .addComponent(songLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
                 .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correctLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                    .addComponent(correctLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(126, 126, 126))
         );
 
         mainPanel.add(gamePanel, "gameCard");
@@ -223,40 +223,41 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         resultsPanelLayout.setHorizontalGroup(
             resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resultsPanelLayout.createSequentialGroup()
-                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(resultsPanelLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(395, 395, 395)
+                        .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(team1ResultsLbl)
+                            .addGroup(resultsPanelLayout.createSequentialGroup()
+                                .addComponent(team2ResultsLbl)
+                                .addGap(56, 56, 56)
+                                .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(team1ScoreLbl)
+                                    .addComponent(team2ScoreLbl)))))
+                    .addGroup(resultsPanelLayout.createSequentialGroup()
+                        .addGap(268, 268, 268)
                         .addComponent(statsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(resultsPanelLayout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(team2ResultsLbl)
-                            .addComponent(team1ResultsLbl))
-                        .addGap(41, 41, 41)
-                        .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(team1ScoreLbl)
-                            .addComponent(team2ScoreLbl)))
-                    .addGroup(resultsPanelLayout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(nxtRoundBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addGap(377, 377, 377)
+                        .addComponent(nxtRoundBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         resultsPanelLayout.setVerticalGroup(
             resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resultsPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(180, Short.MAX_VALUE)
                 .addComponent(statsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(93, 93, 93)
                 .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(team1ResultsLbl)
                     .addComponent(team1ScoreLbl))
-                .addGap(79, 79, 79)
+                .addGap(110, 110, 110)
                 .addGroup(resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(team2ResultsLbl)
                     .addComponent(team2ScoreLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGap(75, 75, 75)
                 .addComponent(nxtRoundBtn)
-                .addGap(31, 31, 31))
+                .addGap(132, 132, 132))
         );
 
         mainPanel.add(resultsPanel, "resultsCard");
@@ -266,6 +267,13 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         fileMenu.setText("File");
 
         closeItm.setText("Close");
+        closeItm.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                closeItmActionPerformed(evt);
+            }
+        });
         fileMenu.add(closeItm);
 
         mainMenu.add(fileMenu);
@@ -317,8 +325,14 @@ public class HowDoYouDooUI extends javax.swing.JFrame
 
     private void nxtRoundBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nxtRoundBtnActionPerformed
     {//GEN-HEADEREND:event_nxtRoundBtnActionPerformed
+        songLbl.setText(game.nextSong(false));
         playRound();
     }//GEN-LAST:event_nxtRoundBtnActionPerformed
+
+    private void closeItmActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_closeItmActionPerformed
+    {//GEN-HEADEREND:event_closeItmActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_closeItmActionPerformed
 
     public void playRound()
     {
@@ -376,7 +390,9 @@ public class HowDoYouDooUI extends javax.swing.JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HowDoYouDooUI().setVisible(true);
+                HowDoYouDooUI mainframe = new HowDoYouDooUI();
+                mainframe.setVisible(true);
+                //mainframe.setExtendedState(mainframe.getExtendedState() | Frame.MAXIMIZED_BOTH);
             }
         });
     }

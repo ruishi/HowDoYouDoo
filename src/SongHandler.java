@@ -51,7 +51,9 @@ public class SongHandler extends DefaultHandler {
             if (!(new String(ch, start, length).matches("Billboard Hot 100 Chart")))
             {
                 String[] songArtist = (new String(ch, start, length)).split(",");
-                song = "<html>" + songArtist[0] + "<br>" + songArtist[1] + "<html>";
+                if (songArtist[0].contains(":"))
+                    songArtist[0] = songArtist[0].split(":")[1].trim();
+                song = "<html>" + songArtist[0] + "<br>" + songArtist[1] + "</html>";
             } 
             title = false;
         }
